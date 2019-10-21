@@ -60,8 +60,8 @@ def ta_block_converter(payload):
         None
 ta = {
     "id": "TokenAnalyst",
-    "url": "ws://ws.tokenanalyst.io:8000",
-    "subscribe_json": json.dumps({"event":"subscribe","channel":"exchange_flows","id":"0","key":API_KEY}),
+    "url": "wss://ws.tokenanalyst.io",
+    "subscribe_json": json.dumps({"event":"subscribe","channel":"btc_confirmed_exchange_flows","id":"0","key":API_KEY}),
     "block_converter": ta_block_converter 
 }
 

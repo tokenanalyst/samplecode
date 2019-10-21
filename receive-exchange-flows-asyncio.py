@@ -37,9 +37,9 @@ async def interpret(response, id, on_data, on_heartbeat, on_subscribed):
     await on_subscribed(response['data'])
 
 async def subscribe(key, on_data, on_heartbeat, on_subscribed):
-  uri = "ws://ws.tokenanalyst.io:8000"
+  uri = "wss://ws.tokenanalyst.io"
   id = "0"
-  channel = "exchange_flows"
+  channel = "btc_unconfirmed_exchange_flows"
   payload = {"event":"subscribe","channel":channel,"id":id,"key":key}
   async with websockets.connect(uri) as websocket:
     await websocket.send(json.dumps(payload))
